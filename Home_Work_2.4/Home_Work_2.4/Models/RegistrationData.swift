@@ -14,7 +14,7 @@ struct RegistrationData {
 extension RegistrationData {
     static func getRegistrationData()  -> RegistrationData {
         return RegistrationData(userName: "Yulia",
-                                password: "password")
+                                password: "pass")
         
     }
 }

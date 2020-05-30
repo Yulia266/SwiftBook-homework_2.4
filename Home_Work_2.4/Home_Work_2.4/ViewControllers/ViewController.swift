@@ -13,25 +13,38 @@ class ViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    @IBOutlet var logInStackView: UIStackView!
+    @IBOutlet var wrongMessageView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        wrongMessageView.layer.cornerRadius = 15
+        
     }
     
-
     @IBAction func logInButton() {
         let registrationData = RegistrationData.getRegistrationData()
+        
         if userNameTextField.text != registrationData.userName ||
-            passwordTextField.text != registrationData.password
-        {
-            print("неверный пароль")
-        } else {
-            print("верный пароль")
+            passwordTextField.text != registrationData.password {
+            
+            wrongMessageView.isHidden = false
+            view.bringSubviewToFront(wrongMessageView)
+            
         }
-        
-        }
-        
     }
+    
+    @IBAction func OKButton() {
+        wrongMessageView.isHidden = true
+        passwordTextField.text = nil
+    }
+    
+    @IBAction func forgotUserNameButton() {
+    }
+    
+    @IBAction func forgotPasswordButton() {
+    }
+}
+
     
     
 
