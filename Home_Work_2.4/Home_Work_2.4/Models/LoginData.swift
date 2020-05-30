@@ -6,14 +6,14 @@
 //  Copyright © 2020 Юлия. All rights reserved.
 //
 
-struct RegistrationData {
+struct LoginData {
     let userName: String?
     let password: String?
 }
 
-extension RegistrationData {
-    static func getRegistrationData()  -> RegistrationData {
-        return RegistrationData(userName: "Yulia",
+extension LoginData {
+    static func getLoginData()  -> LoginData {
+        return LoginData(userName: "Yulia",
                                 password: "pass")
         
     }
