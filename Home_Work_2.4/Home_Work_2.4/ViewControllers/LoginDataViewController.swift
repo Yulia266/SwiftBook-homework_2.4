@@ -19,8 +19,6 @@ class LoginDataViewController: UIViewController {
     @IBOutlet var loginMessage: UIStackView!
     @IBOutlet var passwordMessage: UIStackView!
     
-    var userName: String!
-    
     @IBOutlet var logInCheck: UIButton!
     
     override func viewDidLoad() {
@@ -42,16 +40,19 @@ class LoginDataViewController: UIViewController {
             showMessage(wrongMessage)
         } else {
             logInCheck.sendActions(for: .touchUpInside)
-            userName = userNameTextField.text
         }
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if  segue.identifier == "showWelcome" {
-            let successfulLoginVC =
-            segue.destination as! SuccessfulLoginViewController
-            successfulLoginVC.welcomeLabel = userName!
+        if segue.identifier == "showWelcome" {
+            let successfulLoginVC  = segue.destination as? SuccessfulLoginViewController
+            successfulLoginVC?.welcomeLabel = userNameTextField.text
         }
+    }
+    @IBAction func inwindSegue(segue: UIStoryboardSegue) {
+        userNameTextField.text = nil
+        passwordTextField.text = nil
     }
     
     @IBAction func OKButton() {

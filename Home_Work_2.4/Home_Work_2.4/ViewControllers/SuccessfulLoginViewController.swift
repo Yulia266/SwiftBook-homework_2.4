@@ -17,13 +17,8 @@ class SuccessfulLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeLebel.text = welcomeLabel
+        welcomeLebel.text = "Welcome, " + welcomeLabel
         
     }
-    
-    @IBAction func logOutButton() {
-        
-    }
-    
     
 }

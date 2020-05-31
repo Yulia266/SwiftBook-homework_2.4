@@ -126,7 +126,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <state key="normal" title="Log In Check"/>
                                         <connections>
-                                            <segue destination="Ibk-i1-b4H" kind="presentation" identifier="showWelcome" modalPresentationStyle="fullScreen" id="dk4-AC-1G9"/>
+                                            <segue destination="Y6D-8p-LAE" kind="presentation" identifier="showWelcome" modalPresentationStyle="fullScreen" id="sn4-r9-Yc7"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PD7-qb-I8h">
@@ -208,13 +208,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Log Out"/>
                                         <connections>
-                                            <action selector="logOutButton" destination="Y6D-8p-LAE" eventType="touchUpInside" id="hhj-bw-C5V"/>
+                                            <segue destination="znv-kl-t0A" kind="unwind" unwindAction="inwindSegueWithSegue:" id="CSi-FC-k5c"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.70351620140000004" blue="0.72869086949999995" alpha="0.90979863559999996" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="idX-JP-vwV" firstAttribute="centerY" secondItem="xZz-x2-EKd" secondAttribute="centerY" id="AHI-hU-tAa"/>
                             <constraint firstItem="idX-JP-vwV" firstAttribute="leading" secondItem="TQ5-SV-QwA" secondAttribute="leading" constant="16" id="WnQ-Az-xZ1"/>
@@ -228,26 +228,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDU-Ed-HRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="znv-kl-t0A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1850.625" y="117.25352112676056"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Kyq-JB-4hL">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ibk-i1-b4H" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="URQ-65-4RA">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Y6D-8p-LAE" kind="relationship" relationship="viewControllers" id="tl1-Xu-lfZ"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tzI-6a-sa8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="853.125" y="117.25352112676056"/>
         </scene>
     </scenes>
     <resources>
