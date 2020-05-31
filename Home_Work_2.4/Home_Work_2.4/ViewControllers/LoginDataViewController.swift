@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginDataViewController: UIViewController {
+class LoginDataViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -21,16 +21,38 @@ class LoginDataViewController: UIViewController {
     
     @IBOutlet var logInCheck: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messageView.layer.cornerRadius = 15
         hiddenMessage()
-        
-       
+        self.userNameTextField.delegate = self
+        self.passwordTextField.delegate = self
+        userNameTextField.returnKeyType = .next
+        passwordTextField.returnKeyType = .done
     }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
+
+        if touches.first != nil  {
+            if userNameTextField.isFirstResponder {
+                userNameTextField.resignFirstResponder();
+            }
+            if passwordTextField.isFirstResponder {
+                passwordTextField.resignFirstResponder()
+            }
+            super .touchesBegan(touches, with: event)
+        }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           let tabBarController = segue.destination as! UITabBarController
+           let destinationVC = tabBarController.viewControllers?.first as! SuccessfulLoginViewController
+           
+           if segue.identifier == "showWelcome" {
+               destinationVC.welcomeLabel = userNameTextField.text
+           }
+       }
     
     @IBAction func logInButton() {
         let loginData = LoginData.getLoginData()
@@ -40,16 +62,6 @@ class LoginDataViewController: UIViewController {
             showMessage(wrongMessage)
         } else {
             logInCheck.sendActions(for: .touchUpInside)
-        }
-    }
-    
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabBarController = segue.destination as! UITabBarController
-        let destinationVC = tabBarController.viewControllers?.first as! SuccessfulLoginViewController
-        
-        if segue.identifier == "showWelcome" {
-            destinationVC.welcomeLabel = userNameTextField.text
         }
     }
        
@@ -72,13 +84,23 @@ class LoginDataViewController: UIViewController {
        showMessage(passwordMessage)
     }
     
-    private func hiddenMessage() {
-                messageView.isHidden = true
-                loginMessage.isHidden = true
-                passwordMessage.isHidden = true
-                wrongMessage.isHidden = true
+      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       
+        switch textField {
+        case userNameTextField: passwordTextField.becomeFirstResponder()
+        case passwordTextField: logInButton()
+        default: break
+        }
+        return true
 }
 
+    private func hiddenMessage() {
+        messageView.isHidden = true
+        loginMessage.isHidden = true
+        passwordMessage.isHidden = true
+        wrongMessage.isHidden = true
+    }
+    
     private func showMessage (_ sender: UIView) {
         messageView.isHidden = false
         view.bringSubviewToFront(messageView)
@@ -89,10 +111,8 @@ class LoginDataViewController: UIViewController {
         case 2: passwordMessage.isHidden = false
         default: break
         }
+    }
 }
-}
-
-
 
 
 
