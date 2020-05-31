@@ -45,11 +45,14 @@ class LoginDataViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabBarController = segue.destination as! UITabBarController
+        let destinationVC = tabBarController.viewControllers?.first as! SuccessfulLoginViewController
+        
         if segue.identifier == "showWelcome" {
-            let successfulLoginVC  = segue.destination as? SuccessfulLoginViewController
-            successfulLoginVC?.welcomeLabel = userNameTextField.text
+            destinationVC.welcomeLabel = userNameTextField.text
         }
     }
+       
     @IBAction func inwindSegue(segue: UIStoryboardSegue) {
         userNameTextField.text = nil
         passwordTextField.text = nil

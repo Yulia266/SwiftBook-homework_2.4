@@ -126,7 +126,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                         <state key="normal" title="Log In Check"/>
                                         <connections>
-                                            <segue destination="Y6D-8p-LAE" kind="presentation" identifier="showWelcome" modalPresentationStyle="fullScreen" id="sn4-r9-Yc7"/>
+                                            <segue destination="H2i-Da-5kO" kind="presentation" identifier="showWelcome" modalPresentationStyle="fullScreen" id="sn4-r9-Yc7"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PD7-qb-I8h">
@@ -230,7 +230,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDU-Ed-HRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="znv-kl-t0A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1850.625" y="117.25352112676056"/>
+            <point key="canvasLocation" x="2213" y="116"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="DhD-Cj-o1U">
+            <objects>
+                <viewController id="bRG-kA-lJ4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ss3-bh-isF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4tn-Bq-1Rr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="square.and.arrow.up" catalog="system" id="DsB-29-T0l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjd-xK-QK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="889"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Gn0-iN-sjp">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="H2i-Da-5kO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Mi-pP-00L">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Y6D-8p-LAE" kind="relationship" relationship="viewControllers" id="Nkc-TY-QlM"/>
+                        <segue destination="bRG-kA-lJ4" kind="relationship" relationship="viewControllers" id="40B-UO-uYn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcE-Ao-38g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="116"/>
         </scene>
     </scenes>
     <resources>
