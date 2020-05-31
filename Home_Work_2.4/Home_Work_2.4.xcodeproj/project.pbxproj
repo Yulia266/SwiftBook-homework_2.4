@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC20BD30248437AE00948AB2 /* AboutMeViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC20BD2F248437AE00948AB2 /* AboutMeViewContoller.swift */; };
+		EC20BD3224843E2500948AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC20BD3124843E2500948AB2 /* Assets.xcassets */; };
 		EC4220FE2481D4C5009CABCD /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4220FD2481D4C5009CABCD /* LoginData.swift */; };
 		ECE571AE2481ABE100FA232F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE571AD2481ABE100FA232F /* AppDelegate.swift */; };
 		ECE571B02481ABE100FA232F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE571AF2481ABE100FA232F /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		EC20BD2F248437AE00948AB2 /* AboutMeViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewContoller.swift; sourceTree = "<group>"; };
+		EC20BD3124843E2500948AB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Home_Work_2.4/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		EC4220FD2481D4C5009CABCD /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		ECE571AA2481ABE100FA232F /* Home_Work_2.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home_Work_2.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE571AD2481ABE100FA232F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		ECE571C12481AD0600FA232F /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				EC20BD3124843E2500948AB2 /* Assets.xcassets */,
 				ECE571AD2481ABE100FA232F /* AppDelegate.swift */,
 				ECE571AF2481ABE100FA232F /* SceneDelegate.swift */,
 				ECE571BB2481ABEA00FA232F /* Info.plist */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE571BA2481ABEA00FA232F /* LaunchScreen.storyboard in Resources */,
+				EC20BD3224843E2500948AB2 /* Assets.xcassets in Resources */,
 				ECE571B52481ABE100FA232F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
