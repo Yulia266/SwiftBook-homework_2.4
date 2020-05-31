@@ -21,7 +21,6 @@ class LoginDataViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var logInCheck: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         messageView.layer.cornerRadius = 15
