@@ -10,4 +10,20 @@ import UIKit
 
 class SuccessfulLoginViewController: UIViewController {
     
+    @IBOutlet var welcomeLebel: UILabel!
+    
+    var welcomeLabel: String!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        welcomeLebel.text = welcomeLabel
+        
+    }
+    
+    @IBAction func logOutButton() {
+        
+    }
+    
+    
 }

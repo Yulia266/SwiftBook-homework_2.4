@@ -19,16 +19,20 @@ class LoginDataViewController: UIViewController {
     @IBOutlet var loginMessage: UIStackView!
     @IBOutlet var passwordMessage: UIStackView!
     
+    var userName: String!
+    
+    @IBOutlet var logInCheck: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         messageView.layer.cornerRadius = 15
         hiddenMessage()
+        
+       
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
     }
-    
     
     @IBAction func logInButton() {
         let loginData = LoginData.getLoginData()
@@ -36,6 +40,17 @@ class LoginDataViewController: UIViewController {
         if userNameTextField.text != loginData.userName ||
             passwordTextField.text != loginData.password {
             showMessage(wrongMessage)
+        } else {
+            logInCheck.sendActions(for: .touchUpInside)
+            userName = userNameTextField.text
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "showWelcome" {
+            let successfulLoginVC =
+            segue.destination as! SuccessfulLoginViewController
+            successfulLoginVC.welcomeLabel = userName!
         }
     }
     
@@ -43,6 +58,7 @@ class LoginDataViewController: UIViewController {
         hiddenMessage()
         passwordTextField.text = nil
     }
+    
     
     @IBAction func forgotUserNameButton() {
        showMessage(loginMessage)
